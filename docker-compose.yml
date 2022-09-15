@@ -1,7 +1,7 @@
 version: '3.7'
 
 services:
-  ts-node-docker:
+  template-container:
     build:
       context: .
       dockerfile: Dockerfile
@@ -9,9 +9,9 @@ services:
     volumes:
       - ./src:/home/node/app/src
       - ./nodemon.json:/home/node/app/nodemon.json
-    container_name: ts-node-docker
+    container_name: template-container
     expose:
-      - '8000'
+      - '4000'
     ports:
-      - '8000:8000'
+      - '4000:4000'
     command: npm run dev
